@@ -76,7 +76,7 @@ int findTileIndex(const Tile& tile, const vector<Tile>& tileset) {
     return -1;
 }
 
-// Lưu tilemap dưới dạng JSON
+// Lưu tilemap dưới dạng txt
 void saveTileMapTxt(const vector<vector<int>>& tilemap, const string& filename) {
     ofstream file(filename);
     if (!file.is_open()) {
@@ -166,14 +166,14 @@ void saveTileSet(const string& filename, const vector<Tile>& tiles, int tileSize
 
 int main() {
 
-    string filename = "frame0";
+    string filename = "frame3";
     //Cắt ảnh thành tileset
     string imagePath = filename+".png"; // Ảnh đầu vào
     string tilesetName = filename + "tileset.png";
     vector<Tile> uniqueTiles = extractUniqueTiles(imagePath, TILE_SIZE);
     saveTileSet(tilesetName, uniqueTiles, TILE_SIZE);
-    cout << "Tileset co "<<uniqueTiles.size()<<endl;
-    cout << "Tileset saved as tileset.png" << endl;
+    cout << "Tileset co "<<uniqueTiles.size()<<" tiles" << endl;
+    cout << "Tileset saved as "+filename+"tileset.png" << endl;
 
 
 
@@ -199,7 +199,8 @@ int main() {
     }
 
     saveTileMapTxt(tilemap, filename+".txt");
-    cout << "Tilemap saved " << endl;
+    cout << "Tilemap saved as " + filename + ".txt" << endl;
+    ;
 
 
     return 0;
