@@ -13,7 +13,7 @@
 using namespace std;
 
 const int TILE_SIZE = 16;
-const int TILES_PER_ROW = 200; // Số tile trên mỗi hàng trong tileset
+
 
 struct Tile {
     vector<unsigned char> pixels;
